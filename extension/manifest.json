@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "AutoAccess: AI Accessibility",
+    "version": "2.0",
+    "description": "Summarize web pages and describe images in multiple languages using Gemini and Google TTS.",
+    "permissions": ["storage", "scripting", "activeTab"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icons/icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "host_permissions": ["<all_urls>"]
+  }
