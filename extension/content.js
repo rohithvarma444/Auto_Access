@@ -161,6 +161,8 @@ function showPopup(message, buttonText, onClick) {
 
           const data = await res.json();
           if (data.altText && data.audioBase64) {
+            console.log("[STEM] Translated AltText:", data.altText); 
+
             img.style.border = "3px dashed orange";
             img.setAttribute("data-autoaccess-stem", data.altText);
             insertPlayButton(img, data.audioBase64, "🧪 STEM Audio");
